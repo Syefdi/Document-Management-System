@@ -6,3 +6,37 @@
 @import "card.scss";
 @import "left-side-bar.scss";
 @import "nav-bar.scss";
+
+.badge {
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  font-size: 0.75em;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+}
+
+.badge-success {
+  background-color: #28a745; // Hijau
+}
+
+.badge-info {
+  background-color: #17a2b8; // Biru
+}
+
+.badge-warning {
+  background-color: #ffc107; // Kuning
+  color: #212529; // Teks gelap agar terbaca
+}
+
+.badge-danger {
+  background-color: #dc3545; // Merah
+}
+
+.badge-secondary {
+  background-color: #6c757d; // Abu-abu
+}

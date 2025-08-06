@@ -56,21 +56,20 @@ export class DocumentDataSource implements DataSource<DocumentInfo> {
         paginationParam.totalCount = parseInt(resp.headers.get('totalCount'));
         paginationParam.skip = parseInt(resp.headers.get('skip'));
         this.responseHeaderSubject.next({ ...paginationParam });
+
         this._data = [...resp.body];
-        const indexableExtensions = [
-          'pdf',
-          'doc',
-          'docx',
-          'xls',
-          'xlsx',
-          'txt',
-        ];
+
+        
+        console.log('DEBUG: Data dari backend:', this._data);
+
+        const indexableExtensions = ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'txt'];
         this._data.forEach((doc) => {
           doc.location = doc.location ?? 'local';
           doc.isIndexable = indexableExtensions.includes(
             doc.url.split('.').pop()
           );
         });
+
         this._count = this._data.length;
         this.documentsSubject.next(this._data);
       });

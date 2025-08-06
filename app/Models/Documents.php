@@ -114,6 +114,10 @@ class Documents extends Model
     {
         return $this->belongsTo(DocumentWorkflow::class, 'documentWorkflowId', 'id');
     }
+    public function currentStep()
+    {
+    return $this->belongsTo(WorkflowStep::class, 'currentStepId');
+    }
 
     protected static function boot()
     {

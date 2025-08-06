@@ -72,6 +72,8 @@ export class DocumentListComponent
     'categoryName',
     'createdDate',
     'workflowName',
+    'workflowStatus',
+    // 'isWorkflowCompleted',
     'location',
     'companyName',
     'statusName',
@@ -113,6 +115,11 @@ export class DocumentListComponent
     this.dataSource.loadDocuments(this.documentResource);
     this.getResourceParameter();
     this.getLangDir();
+
+    setTimeout(() => {
+    console.log('DEBUG: data dokumen yang dimuat:', this.dataSource.data);
+  }, 2000);
+
   }
 
   getLangDir() {
